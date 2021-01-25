@@ -74,6 +74,8 @@
     margin-top: 25px;
 }
 
+
+
 /**#btnLeft:focus {
     background-color: #ffffff;
 }
@@ -114,8 +116,6 @@ header.nav-fixed {
     height: 25px;
 }
 
-@media only screen and (max-width: 600px) {
-    #image, #image1, #image2 {
-        height: 50%;
-    }
+.image {
+    height: 10px;
 }
