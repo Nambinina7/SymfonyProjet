@@ -57,7 +57,6 @@ class App extends Component {
     render() {
         return (
             <div style={{ margin: '100px' }}>
-                <TestForm createProduit={this.createProduit}/>
                 <Lists produits={this.state.produits} produit={this.produit} />
             </div>
         )

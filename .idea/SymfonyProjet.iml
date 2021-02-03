@@ -104,6 +104,8 @@
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/web-link" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/fig/link-util" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/nelmio/cors-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/jms/metadata" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/vich/uploader-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

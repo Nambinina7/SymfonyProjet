@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiProperty;
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -10,15 +11,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ApiResource(
  *     itemOperations={
  *     "get"={},
- *     "get"={
- *          "methode"="POST",
- *          "path"="/produits/prix",
- *          "controller"=App\Controller\ProduitController::class
- *     },
  *     "put"={},
  *     "delete"={},}
  * )
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
+ * @ApiResource(iri="http://schema.org/Produit")
  */
 class Produit
 {
@@ -30,7 +27,13 @@ class Produit
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @var Media|null
+     * @ORM\ManyToOne(targetEntity=Media::class)
+     * @ORM\JoinColumn(nullable=true)
+     * @ApiProperty(iri="http://schema.org/image")
      */
+
+
     private $id;
 
     /**
@@ -57,7 +60,7 @@ class Produit
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    public $image;
 
     public function getId(): ?int
     {
