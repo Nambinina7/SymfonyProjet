@@ -1,11 +1,23 @@
 <?php
 
 namespace App\Entity;
-
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ApiResource(
+ *     itemOperations={
+ *     "get"={},
+ *     "get"={
+ *          "methode"="POST",
+ *          "path"="/produits/prix",
+ *          "controller"=App\Controller\ProduitController::class
+ *     },
+ *     "put"={},
+ *     "delete"={},}
+ * )
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
  */
 class Produit
@@ -23,6 +35,7 @@ class Produit
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $nom;
 

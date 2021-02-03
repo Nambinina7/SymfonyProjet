@@ -86,6 +86,20 @@
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/nouveausymfony/vendor/nelmio/cors-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1">

@@ -90,6 +90,20 @@
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-http" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-core" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/validator" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/api-platform/core" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/psr/link" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/willdurand/negotiation" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/property-info" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/expression-language" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/web-link" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/nelmio/cors-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
