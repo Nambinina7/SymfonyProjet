@@ -15,7 +15,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *     "delete"={},}
  * )
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
- * @ApiResource(iri="http://schema.org/Produit")
+ * @ApiResource(iri="http://schema.org/Book")
  */
 class Produit
 {
@@ -27,13 +27,7 @@ class Produit
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @var Media|null
-     * @ORM\ManyToOne(targetEntity=Media::class)
-     * @ORM\JoinColumn(nullable=true)
-     * @ApiProperty(iri="http://schema.org/image")
      */
-
-
     private $id;
 
     /**
@@ -58,7 +52,11 @@ class Produit
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var Media|null
+     *
+     * @ORM\ManyToOne(targetEntity=Media::class)
+     * @ORM\JoinColumn(nullable=true)
+     * @ApiProperty(iri="http://schema.org/image")
      */
     public $image;
 
@@ -115,20 +113,20 @@ class Produit
         return $this;
     }
 
-    public function getImage(): ?string
+    public function toArray()
+    {
+        return ['id' => $this->id, 'nom' => $this->nom,'localisation' => $this->localisation, 'description' => $this->description, 'prix' => $this->prix, 'image' => self::IMAGE_PATH.$this->image];
+    }
+
+    public function getImage(): ?Media
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?Media $image): self
     {
         $this->image = $image;
 
         return $this;
-    }
-
-    public function toArray()
-    {
-        return ['id' => $this->id, 'nom' => $this->nom,'localisation' => $this->localisation, 'description' => $this->description, 'prix' => $this->prix, 'image' => self::IMAGE_PATH.$this->image];
     }
 }

@@ -106,6 +106,20 @@
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/nelmio/cors-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/jms/metadata" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/vich/uploader-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/knplabs/knp-menu-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/knplabs/knp-menu" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/admin-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/doctrine-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/form-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/block-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/twig-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/phpstan/phpdoc-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-acl" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/jms/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/twig/string-extra" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/doctrine-orm-admin-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
