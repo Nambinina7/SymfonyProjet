@@ -5,7 +5,8 @@ namespace App\EventSubscriber;
 
 use ApiPlatform\Core\EventListener\EventPriorities;
 use ApiPlatform\Core\Util\RequestAttributesExtractor;
-use App\Entity\Media;
+use App\Entity\MediaObject;
+use App\Entity\Produit;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
@@ -41,18 +42,24 @@ final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInt
             return;
         }
 
-        $media = $controllerResult;
+        $objects = $controllerResult;
 
-        if (!is_iterable($medias)) {
-            $media = [$media];
+        if (!is_iterable($objects)) {
+            $objects = [$objects];
         }
 
-        foreach ($medias as $media) {
-            if (!$media instanceof Media) {
+        foreach ($objects as $object) {
+            if (!$object instanceof MediaObject || !$object instanceof Produit) {
                 continue;
             }
 
-            $media->contentUrl = $this->storage->resolveUri($media, 'file');
+            if ($object instanceof MediaObject) {
+                $object->contentUrl = $this->storage->resolveUri($object, 'file');
+            }
+
+            if ($object instanceof Produit) {
+                $object->imageUrl = $object->image->contentUrl;
+            }
         }
     }
 }
