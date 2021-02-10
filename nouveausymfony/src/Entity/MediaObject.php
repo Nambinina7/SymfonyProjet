@@ -13,31 +13,39 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity
- * @ApiResource(iri="http://schema.org/MediaObject", collectionOperations={
- *     "get",
- *     "post"={
- *         "method"="POST",
- *         "path"="/media_objects",
- *         "controller"=CreateMediaObjectAction::class,
- *         "defaults"={"_api_receive"=false},
- *         "denormalization_context"={"groups"={"media_object_post"}},
- *         "validation_groups"={"media_object_post"},
- *         "swagger_context" = {
- *            "consumes" = {
- *                "multipart/form-data",
- *             },
- *             "parameters" = {
- *                 {
- *                      "name" = "file",
- *                      "in" = "formData",
- *                      "required" = "true",
- *                      "type" = "file",
- *                      "description" = "The file to upload"
- *                 }
- *             },
- *         }
+ * @ApiResource(
+ *     iri="http://schema.org/MediaObject",
+ *     normalizationContext={
+ *         "groups"={"media_object_read"}
  *     },
- * }
+ *     collectionOperations={
+ *         "post"={
+ *             "controller"=CreateMediaObjectAction::class,
+ *             "deserialize"=false,
+ *             "validation_groups"={"Default", "media_object_create"},
+ *             "openapi_context"={
+ *                 "requestBody"={
+ *                     "content"={
+ *                         "multipart/form-data"={
+ *                             "schema"={
+ *                                 "type"="object",
+ *                                 "properties"={
+ *                                     "file"={
+ *                                         "type"="string",
+ *                                         "format"="binary"
+ *                                     }
+ *                                 }
+ *                             }
+ *                         }
+ *                     }
+ *                 }
+ *             }
+ *         },
+ *         "get"
+ *     },
+ *     itemOperations={
+ *         "get","delete"
+ *     }
  * )
  * @Vich\Uploadable
  */
@@ -78,17 +86,5 @@ class MediaObject
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFilePath(): ?string
-    {
-        return $this->filePath;
-    }
-
-    public function setFilePath(?string $filePath): self
-    {
-        $this->filePath = $filePath;
-
-        return $this;
     }
 }
