@@ -34,13 +34,19 @@ final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInt
         $controllerResult = $event->getControllerResult();
         $request = $event->getRequest();
 
-        if ($controllerResult instanceof Response || !$request->attributes->getBoolean('_api_respond', true)) {
-            return;
-        }
+//        if ($controllerResult instanceof Response || !$request->attributes->getBoolean('_api_respond', true)) {
+//            dump("ato"); die;
+//            return;
+//        }
 
-        if (!($attributes = RequestAttributesExtractor::extractAttributes($request)) || !\is_a($attributes['resource_class'], MediaObject::class, true)) {
-            return;
-        }
+//        if (
+//            !($attributes = RequestAttributesExtractor::extractAttributes($request)) ||
+//            !\is_a($attributes['resource_class'], MediaObject::class, true) ||
+//            !\is_a($attributes['resource_class'], Produit::class, true)
+//        ) {
+//            dump("ato1"); die;
+//            return;
+//        }
 
         $objects = $controllerResult;
 
@@ -49,7 +55,7 @@ final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInt
         }
 
         foreach ($objects as $object) {
-            if (!$object instanceof MediaObject || !$object instanceof Produit) {
+            if (!$object instanceof MediaObject && !$object instanceof Produit) {
                 continue;
             }
 
@@ -58,7 +64,7 @@ final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInt
             }
 
             if ($object instanceof Produit) {
-                $object->imageUrl = $object->image->contentUrl;
+                $object->imageUrl = $this->storage->resolveUri($object->getImage(), 'file');
             }
         }
     }

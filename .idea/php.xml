@@ -69,12 +69,9 @@
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/friendsofphp/proxy-manager-lts" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/easycorp/easyadmin-bundle" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-guard" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/form" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/property-access" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-bundle" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/options-resolver" />
@@ -83,7 +80,6 @@
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-csrf" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/intl" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/inflector" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/validator" />
@@ -102,20 +98,6 @@
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/jms/metadata" />
       <path value="$PROJECT_DIR$/nouveausymfony/vendor/vich/uploader-bundle" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/knplabs/knp-menu-bundle" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/knplabs/knp-menu" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/admin-bundle" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/doctrine-extensions" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/cache" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/exporter" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/form-extensions" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/block-bundle" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/twig-extensions" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/phpstan/phpdoc-parser" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/symfony/security-acl" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/jms/serializer" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/twig/string-extra" />
-      <path value="$PROJECT_DIR$/nouveausymfony/vendor/sonata-project/doctrine-orm-admin-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1">

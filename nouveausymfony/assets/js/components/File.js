@@ -17,7 +17,7 @@ class File extends React.Component{
     }
 
     images = () => {
-        axios.get('/api/media_objects/{id}').then(response => {
+        axios.get('/api/media_objects').then(response => {
             console.log(response)
             this.setState({Images: response.data["hydra:member"]})
 

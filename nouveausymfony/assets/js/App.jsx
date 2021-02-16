@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom'
 import axios from "axios";
 import Lists from "./components/Lists";
-//import Map from "./Index/Maps";
+import Map from "./Index/Maps";
 import TestForm from "./components/TestForm"
+
 
 
 class App extends Component {

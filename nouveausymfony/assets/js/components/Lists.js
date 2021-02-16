@@ -36,7 +36,7 @@ class Lists extends React.Component{
             <CardActionArea>
               <CardMedia
                   className={classes.media}
-                  image={p.image}
+                  image={p.imageUrl}
                   title="Contemplative Reptile"
               />
               <CardContent>

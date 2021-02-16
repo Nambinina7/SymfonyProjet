@@ -8,12 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(
- *     itemOperations={
- *     "get"={},
- *     "put"={},
- *     "delete"={},}
- * )
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
  * @ApiResource(iri="http://schema.org/Book")
  */
@@ -131,4 +126,5 @@ class Produit
 
         return $this;
     }
+
 }

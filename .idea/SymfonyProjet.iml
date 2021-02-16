@@ -73,12 +73,9 @@
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/doctrine/doctrine-migrations-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/friendsofphp/proxy-manager-lts" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/easycorp/easyadmin-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/polyfill-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-guard" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/form" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/string" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/uid" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/property-access" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/options-resolver" />
@@ -87,7 +84,6 @@
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-csrf" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/intl" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/inflector" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-http" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-core" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/validator" />
@@ -106,20 +102,6 @@
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/nelmio/cors-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/jms/metadata" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/vich/uploader-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/knplabs/knp-menu-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/knplabs/knp-menu" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/admin-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/doctrine-extensions" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/cache" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/exporter" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/form-extensions" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/block-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/twig-extensions" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/phpstan/phpdoc-parser" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/security-acl" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/jms/serializer" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/twig/string-extra" />
-      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/sonata-project/doctrine-orm-admin-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
