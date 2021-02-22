@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New MediaObject{% endblock %}
+
+{% block body %}
+    <h1>Create new MediaObject</h1>
+
+    {{ include('media_object/_form.html.twig') }}
+
+    <a href="{{ path('media_object_index') }}">back to list</a>
+{% endblock %}

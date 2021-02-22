@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MediaObject index{% endblock %}
+
+{% block body %}
+    <h1>MediaObject index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FilePath</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for media_object in media_objects %}
+            <tr>
+                <td>{{ media_object.id }}</td>
+                <td>{{ media_object.filePath }}</td>
+                <td>
+                    <a href="{{ path('media_object_show', {'id': media_object.id}) }}">show</a>
+                    <a href="{{ path('media_object_edit', {'id': media_object.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('media_object_new') }}">Create new</a>
+{% endblock %}
