@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 " style="width: 50% ; height: auto ">
+            <h1>Inscription</h1>
+            {% form_theme form 'bootstrap_4_layout.html.twig' %}
+            {{ form_start(form) }}
+                {{ form_row(form.nom,{'label': 'Nom d\'utilisateur :','attr' : {'placeholder' :'Nom d\'utilisateur'}}) }}
+                {{ form_row(form.prenom,{'label': 'Prenom d\'utilisateur :','attr' : {'placeholder' :'Prenom d\'utilisateur'}}) }}
+                {{ form_row(form.sex,{'label': 'sex :','attr' : {'placeholder' :'Sex'}}) }}
+                {{ form_row(form.age,{'label': 'Age :','attr' : {'placeholder' :'Entrer votre age'}}) }}
+                {{ form_row(form.email,{'label': 'Email :', 'attr' : {'placeholder' :'Enter votre email'}}) }}
+                {{ form_row(form.password,{'label': 'Mot de Passe :','attr' : {'placeholder' :'Mot de Passe'}}) }}
+                {{ form_row(form.confirm_password,{'label': 'Confirmation de mot de passe :','attr' : {'placeholder' :'Confirmation de mot de passe'}}) }}
+                <button type="submit" class="btn btn-success">Inscription</button>
+            {{ form_end(form) }}
+
+            <a href="{{ path('user_index') }}" class="btn btn-secondary mt-4">back to list</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

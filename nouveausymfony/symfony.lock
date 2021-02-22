@@ -81,13 +81,17 @@
         "version": "1.1.1"
     },
     "easycorp/easyadmin-bundle": {
-        "version": "3.0",
+        "version": "2.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.0",
-            "ref": "b131e6cbfe1b898a508987851963fff485986285"
-        }
+            "version": "2.0",
+            "ref": "0a51040a43c6f2172a3a0135cd15daf2043905d7"
+        },
+        "files": [
+            "config/packages/easy_admin.yaml",
+            "config/routes/easy_admin.yaml"
+        ]
     },
     "fig/link-util": {
         "version": "1.1.1"
@@ -97,15 +101,6 @@
     },
     "jms/metadata": {
         "version": "2.4.0"
-    },
-    "jms/serializer": {
-        "version": "3.11.0"
-    },
-    "knplabs/knp-menu": {
-        "version": "v3.1.2"
-    },
-    "knplabs/knp-menu-bundle": {
-        "version": "v3.1.0"
     },
     "laminas/laminas-code": {
         "version": "4.0.0"
@@ -131,6 +126,9 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "pagerfanta/pagerfanta": {
+        "version": "v2.6.0"
+    },
     "php": {
         "version": "7.4"
     },
@@ -142,9 +140,6 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
-    },
-    "phpstan/phpdoc-parser": {
-        "version": "0.4.10"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -169,50 +164,6 @@
         "files": [
             "config/packages/sensio_framework_extra.yaml"
         ]
-    },
-    "sonata-project/admin-bundle": {
-        "version": "3.64",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "3.64",
-            "ref": "e300c83e77d35a352b863a82c8d039f29f10fd62"
-        },
-        "files": [
-            "config/packages/sonata_admin.yaml",
-            "config/routes/sonata_admin.yaml",
-            "src/Admin/.gitignore"
-        ]
-    },
-    "sonata-project/block-bundle": {
-        "version": "4.5.0"
-    },
-    "sonata-project/cache": {
-        "version": "2.1.0"
-    },
-    "sonata-project/doctrine-extensions": {
-        "version": "1.11.0"
-    },
-    "sonata-project/doctrine-orm-admin-bundle": {
-        "version": "3.28.0"
-    },
-    "sonata-project/exporter": {
-        "version": "2.5.0"
-    },
-    "sonata-project/form-extensions": {
-        "version": "1.4",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "1.4",
-            "ref": "bfc222606aea5418345af70104d974a25dc7c441"
-        },
-        "files": [
-            "config/packages/sonata_form.yaml"
-        ]
-    },
-    "sonata-project/twig-extensions": {
-        "version": "1.5.0"
     },
     "symfony/asset": {
         "version": "v4.4.18"
@@ -365,9 +316,6 @@
     "symfony/polyfill-php80": {
         "version": "v1.22.0"
     },
-    "symfony/polyfill-uuid": {
-        "version": "v1.22.0"
-    },
     "symfony/property-access": {
         "version": "v4.4.18"
     },
@@ -390,9 +338,6 @@
             "config/packages/routing.yaml",
             "config/routes.yaml"
         ]
-    },
-    "symfony/security-acl": {
-        "version": "v3.1.1"
     },
     "symfony/security-bundle": {
         "version": "4.4",
@@ -449,9 +394,6 @@
     "symfony/twig-pack": {
         "version": "v1.0.1"
     },
-    "symfony/uid": {
-        "version": "v5.2.1"
-    },
     "symfony/validator": {
         "version": "4.3",
         "recipe": {
@@ -500,9 +442,6 @@
         "version": "v4.4.18"
     },
     "twig/extra-bundle": {
-        "version": "v3.2.1"
-    },
-    "twig/string-extra": {
         "version": "v3.2.1"
     },
     "vich/uploader-bundle": {

@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom'
 import axios from "axios";
 import Lists from "./components/Lists";
-//import Map from "./Index/Maps";
+import Map from "./Index/Maps";
 import TestForm from "./components/TestForm"
 
 
+
 class App extends Component {
+
+
 
     constructor(props) {
         super(props);
@@ -15,10 +18,15 @@ class App extends Component {
         }
     }
 
+    componentDidMount() {
+        console.log(this.state.produits)
+    }
 
-   produit = () => {
-        axios.get('/api/produit/read').then(response => {
-            this.setState({produits: response.data})
+
+    produit = () => {
+        axios.get('/api/produits').then(response => {
+            console.log(response)
+            this.setState({produits: response.data["hydra:member"]})
 
             }).catch(error =>{
                 console.error(error);

@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import axios from "axios";
 
 const styles = theme =>({
   root: {
@@ -35,7 +36,7 @@ class Lists extends React.Component{
             <CardActionArea>
               <CardMedia
                   className={classes.media}
-                  image={p.image}
+                  image={p.imageUrl}
                   title="Contemplative Reptile"
               />
               <CardContent>

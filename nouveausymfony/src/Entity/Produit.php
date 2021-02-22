@@ -8,12 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(
- *     itemOperations={
- *     "get"={},
- *     "put"={},
- *     "delete"={},}
- * )
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
  * @ApiResource(iri="http://schema.org/Book")
  */
@@ -52,13 +47,15 @@ class Produit
     private $description;
 
     /**
-     * @var Media|null
+     * @var MediaObject|null
      *
-     * @ORM\ManyToOne(targetEntity=Media::class)
+     * @ORM\ManyToOne(targetEntity=MediaObject::class)
      * @ORM\JoinColumn(nullable=true)
      * @ApiProperty(iri="http://schema.org/image")
      */
     public $image;
+
+    public $imageUrl;
 
     public function getId(): ?int
     {
@@ -118,15 +115,16 @@ class Produit
         return ['id' => $this->id, 'nom' => $this->nom,'localisation' => $this->localisation, 'description' => $this->description, 'prix' => $this->prix, 'image' => self::IMAGE_PATH.$this->image];
     }
 
-    public function getImage(): ?Media
+    public function getImage(): ?MediaObject
     {
         return $this->image;
     }
 
-    public function setImage(?Media $image): self
+    public function setImage(?MediaObject $image): self
     {
         $this->image = $image;
 
         return $this;
     }
+
 }

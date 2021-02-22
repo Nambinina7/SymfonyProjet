@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Rôles</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.sex }}</td>
+                <td>
+                    {% for role in user.roles %}
+                        {% if role == "ROLE_USER"  %}
+                            Utilisateur
+                        {% elseif role == "ROLE_EDITOR"  %}
+                            Editeur
+                        {% elseif role == "ROLE_MODO"  %}
+                            Modérateur
+                        {% elseif role == "ROLE_ADMIN" %}
+                            Administrateur
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-success">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}"  class="btn btn-primary">Create new</a>
+{% endblock %}

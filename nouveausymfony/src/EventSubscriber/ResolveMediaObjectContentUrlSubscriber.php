@@ -5,7 +5,8 @@ namespace App\EventSubscriber;
 
 use ApiPlatform\Core\EventListener\EventPriorities;
 use ApiPlatform\Core\Util\RequestAttributesExtractor;
-use App\Entity\Media;
+use App\Entity\MediaObject;
+use App\Entity\Produit;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
@@ -33,26 +34,38 @@ final class ResolveMediaObjectContentUrlSubscriber implements EventSubscriberInt
         $controllerResult = $event->getControllerResult();
         $request = $event->getRequest();
 
-        if ($controllerResult instanceof Response || !$request->attributes->getBoolean('_api_respond', true)) {
-            return;
+//        if ($controllerResult instanceof Response || !$request->attributes->getBoolean('_api_respond', true)) {
+//            dump("ato"); die;
+//            return;
+//        }
+
+//        if (
+//            !($attributes = RequestAttributesExtractor::extractAttributes($request)) ||
+//            !\is_a($attributes['resource_class'], MediaObject::class, true) ||
+//            !\is_a($attributes['resource_class'], Produit::class, true)
+//        ) {
+//            dump("ato1"); die;
+//            return;
+//        }
+
+        $objects = $controllerResult;
+
+        if (!is_iterable($objects)) {
+            $objects = [$objects];
         }
 
-        if (!($attributes = RequestAttributesExtractor::extractAttributes($request)) || !\is_a($attributes['resource_class'], MediaObject::class, true)) {
-            return;
-        }
-
-        $media = $controllerResult;
-
-        if (!is_iterable($medias)) {
-            $media = [$media];
-        }
-
-        foreach ($medias as $media) {
-            if (!$media instanceof Media) {
+        foreach ($objects as $object) {
+            if (!$object instanceof MediaObject && !$object instanceof Produit) {
                 continue;
             }
 
-            $media->contentUrl = $this->storage->resolveUri($media, 'file');
+            if ($object instanceof MediaObject) {
+                $object->contentUrl = $this->storage->resolveUri($object, 'file');
+            }
+
+            if ($object instanceof Produit) {
+                $object->imageUrl = $this->storage->resolveUri($object->getImage(), 'file');
+            }
         }
     }
 }
