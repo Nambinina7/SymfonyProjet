@@ -102,6 +102,9 @@
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/nelmio/cors-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/jms/metadata" />
       <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/vich/uploader-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/pagerfanta/pagerfanta" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/nouveausymfony/vendor/easycorp/easyadmin-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

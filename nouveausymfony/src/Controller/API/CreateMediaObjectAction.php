@@ -1,7 +1,7 @@
 <?php
 // api/src/Controller/CreateMediaObjectAction.php
 
-namespace App\Controller;
+namespace App\Controller\API;
 
 use App\Entity\MediaObject;
 use Symfony\Component\HttpFoundation\Request;

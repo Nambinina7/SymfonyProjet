@@ -32,7 +32,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *                                 "properties"={
  *                                     "file"={
  *                                         "type"="string",
- *                                         "format"="binary"
+ *                                         "format"="binary",
  *                                     }
  *                                 }
  *                             }
@@ -98,5 +98,10 @@ class MediaObject
         $this->filePath = $filePath;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getFilePath();
     }
 }

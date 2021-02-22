@@ -35,7 +35,7 @@ class User implements UserInterface
     private $prenom;
 
     /**
-     * @ORM\Column(type="decimal")
+     * @ORM\Column(type="integer")
      */
     private $age;
 
@@ -44,15 +44,13 @@ class User implements UserInterface
      */
     private $sex;
 
-
-
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="json")
      */
     private $roles = [];
 
@@ -194,5 +192,10 @@ class User implements UserInterface
         $this->sex = $sex;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getNom();
     }
 }

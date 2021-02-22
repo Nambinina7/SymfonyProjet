@@ -15,5 +15,5 @@ api_platform:
 
         html:
             mime_types: [ 'text/html' ]
-        form-data:
+        multipart:
             mime_types: [ 'multipart/form-data' ]
