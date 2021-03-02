@@ -109,4 +109,16 @@ class Produit
         return ['id' => $this->id, 'nom' => $this->nom,'localisation' => $this->localisation, 'description' => $this->description, 'prix' => $this->prix, 'image' => self::IMAGE_PATH.$this->image];
     }
 
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
 }

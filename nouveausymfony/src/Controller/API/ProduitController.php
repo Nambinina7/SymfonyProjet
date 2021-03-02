@@ -14,7 +14,7 @@ use App\Entity\Produit;
 
 
 /**
- * @Route("/api/produit", name="api_produit")
+ * @Route("/produit", name="produit_")
  */
 class ProduitController extends AbstractController
 {
@@ -28,7 +28,7 @@ class ProduitController extends AbstractController
         $this->projectDir = $projectDir;
     }
     /**
-     * @Route("/read", name="api_ produit_read")
+     * @Route("/read", name="read")
      */
     public function index(): Response
     {
@@ -44,7 +44,7 @@ class ProduitController extends AbstractController
 
 
     /**
-     * @Route("/create", name="api_produit_create")
+     * @Route("/create", name="create")
      * @param Request $request
      * @return JsonResponse
      */

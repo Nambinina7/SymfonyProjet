@@ -24,9 +24,9 @@ class App extends Component {
 
 
     produit = () => {
-        axios.get('/api/produits').then(response => {
+        axios.get('/produit/read').then(response => {
             console.log(response)
-            this.setState({produits: response.data["hydra:member"]})
+            this.setState({produits: response.data})
 
             }).catch(error =>{
                 console.error(error);
@@ -42,7 +42,7 @@ class App extends Component {
             newimg,
             filename
         }
-        axios.post('api/produit/create', data)
+        axios.post('/produit/create', data)
             .then(response =>{
                 console.log(response.data);
                 let nouveauP = {
@@ -66,6 +66,7 @@ class App extends Component {
         return (
             <div style={{ margin: '100px' }}>
                 <Lists produits={this.state.produits} produit={this.produit} />
+                <TestForm createProduit={this.createProduit}/>
             </div>
         )
     }
