@@ -33,6 +33,8 @@
         "react-geocode": "^0.2.2",
         "react-google-autocomplete": "^1.2.6",
         "react-google-maps": "^9.4.5",
+        "react-icons": "^4.2.0",
+        "react-router-dom": "^5.2.0",
         "react-swipeable-views": "^0.13.9",
         "uuid": "^8.3.2"
     }

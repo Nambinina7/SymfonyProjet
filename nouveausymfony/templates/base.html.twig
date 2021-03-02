@@ -7,6 +7,14 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
+        {% block javascripts %}
+            <script>
+                var isAdmin = false
+                {% if is_granted('ROLE_ADMIN') %}
+                    isAdmin = true
+                {% endif %}
+            </script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>

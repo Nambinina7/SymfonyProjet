@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom'
 import axios from "axios";
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Lists from "./components/Lists";
 import Map from "./Index/Maps";
 import TestForm from "./components/TestForm"
+import NavBar from "./components/NavBar";
 
 
 
@@ -66,7 +68,12 @@ class App extends Component {
         return (
             <div style={{ margin: '100px' }}>
                 <Lists produits={this.state.produits} produit={this.produit} />
-                <TestForm createProduit={this.createProduit}/>
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/produit/create" render={(props) => <TestForm {...props} createProduit={this.createProduit}  />}/>
+                    </Switch>
+                    <NavBar/>
+                </BrowserRouter>
             </div>
         )
     }
