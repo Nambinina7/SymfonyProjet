@@ -6,7 +6,7 @@ const NavBar = () => (
         <div className="btn-group">
             {
                 isAdmin &&
-                <NavLink to="/produit/create" className="btn btn-outline-dark bg-light" exact={true}><FaPlusSquare /></NavLink>
+                <NavLink to="/produit/create" className="btn btn-outline-dark bg-light" exact={true}><FaPlusSquare />Creer un produit</NavLink>
             }
         </div>
     </footer>
