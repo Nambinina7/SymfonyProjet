@@ -2,6 +2,7 @@
 
 namespace App\Controller\API;
 
+use App\Entity\Tag;
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,13 +49,17 @@ class ProduitController extends AbstractController
      * @param Request $request
      * @return JsonResponse
      */
-    public function create(Request $request, Filesystem $fs)
+    public function create(Request $request, Filesystem $fs, EntityManagerInterface $em)
     {
         $content = json_decode($request->getContent());
-        dump($content);
+        //dump($content); die;
         $produit = new Produit();
 
         $produit->setNom($content->newnom);
+        foreach ($content->newtags as $tagId){
+            $tag = $em->getRepository(Tag::class)->find($tagId);
+            $produit->addTag($tag);
+        }
         $produit->setLocalisation($content->newlocal);
         $produit->setDescription($content->newdesc);
         $produit->setPrix($content->newprix);

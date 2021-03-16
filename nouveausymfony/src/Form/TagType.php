@@ -2,24 +2,25 @@
 
 namespace App\Form;
 
-use App\Entity\MediaObject;
+use App\Entity\Tag;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class MediaObjectType extends AbstractType
+class TagType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('filePath')
+            ->add('nom')
+            ->add('actif')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => MediaObject::class,
+            'data_class' => Tag::class,
         ]);
     }
 }

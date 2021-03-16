@@ -6,6 +6,7 @@ import Lists from "./components/Lists";
 import Map from "./Index/Maps";
 import TestForm from "./components/TestForm"
 import NavBar from "./components/NavBar";
+import MyComponent from "./components/File";
 
 
 
@@ -35,14 +36,15 @@ class App extends Component {
         })
     }
 
-    createProduit = (newnom, newlocal, newdesc, newprix, newimg, filename) => {
+    createProduit = (newnom, newlocal, newdesc, newprix, newimg, filename,newtags) => {
         const data = {
             newnom,
             newlocal,
             newdesc,
             newprix,
             newimg,
-            filename
+            filename,
+            newtags
         }
         axios.post('/produit/create', data)
             .then(response =>{
@@ -52,7 +54,8 @@ class App extends Component {
                     localisation: newlocal,
                     description: newdesc,
                     prix: newprix,
-                    image:newimg
+                    image:newimg,
+                    tags:newtags
                 }
                 this.setState(prevState => ({
                     produits: [...prevState.produits,nouveauP]
@@ -74,6 +77,7 @@ class App extends Component {
                     </Switch>
                     <NavBar/>
                 </BrowserRouter>
+                <MyComponent/>
             </div>
         )
     }

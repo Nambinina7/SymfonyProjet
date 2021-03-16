@@ -4,6 +4,8 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use App\Repository\ProduitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -42,14 +44,26 @@ class Produit
     private $prix;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     public $image;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="produits")
+     */
+    private $tags;
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -106,7 +120,7 @@ class Produit
 
     public function toArray()
     {
-        return ['id' => $this->id, 'nom' => $this->nom,'localisation' => $this->localisation, 'description' => $this->description, 'prix' => $this->prix, 'image' => self::IMAGE_PATH.$this->image];
+        return ['id' => $this->id, 'nom' => $this->nom,'tags' => $this->tags, 'localisation' => $this->localisation, 'description' => $this->description, 'prix' => $this->prix, 'image' => self::IMAGE_PATH.$this->image];
     }
 
     public function getImage(): ?string
@@ -117,6 +131,30 @@ class Produit
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        $this->tags->removeElement($tag);
 
         return $this;
     }

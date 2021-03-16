@@ -24,15 +24,16 @@ cardImage: {
 }
 });
 class Lists extends React.Component{
+
   componentDidMount() {
-    this.props.produit()
+    this.props.produit();
   }
   render() {
     const { classes } = this.props;
     const produits = this.props.produits;
     const data = produits.map(p => {
       return (
-          <Card className={classes.root}>
+          <Card className={classes.root} key={p.id}>
             <CardActionArea>
               <CardMedia
                   className={classes.media}
@@ -52,16 +53,11 @@ class Lists extends React.Component{
                 <Typography variant="body2" color="textSecondary" component="p">
                   {p.description}
                 </Typography>
+                <Button color="secondary">
+                  {p.tags.map(tag => (tag.nom)).join(", ")}
+                </Button>
               </CardContent>
             </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
-            </CardActions>
           </Card>
       )
     })

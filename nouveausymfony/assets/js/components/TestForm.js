@@ -1,14 +1,33 @@
 import React, { Component } from 'react'
+import axios from "axios";
 
 export default class TestForm extends Component {
-    state = {
-        nom : '',
-        localisation: '',
-        description: '',
-        prix:"",
-        image:"",
-        filename: ""
-    }; 
+    constructor(props) {
+        super(props);
+        this.state = {
+            nom : '',
+            localisation: '',
+            description: '',
+            prix:"",
+            image:"",
+            filename: "",
+            error: null,
+            isLoaded: false,
+            tags: [],
+            selectedTags: []
+        }
+    }
+
+    componentDidMount() {
+          axios.get('http://localhost:86/api/tags').then(response => {
+              //console.log(response)
+              this.setState({tags: response.data["hydra:member"]})
+
+         }).catch(error =>{
+              console.error(error);
+         })
+    }
+
    changenom = e =>{
        this.setState({
            nom: e.target.value
@@ -27,6 +46,13 @@ export default class TestForm extends Component {
     changeprix = e =>{
         this.setState({
             prix: e.target.value
+        })
+    };
+
+    onTagSelected = e =>{
+        console.log(e.target.value)
+        this.setState({
+            selectedTags: [e.target.value]
         })
     };
 
@@ -59,7 +85,7 @@ export default class TestForm extends Component {
        e.preventDefault();
        //const data = JSON.stringify(this.state)
        //const users = this.state;
-       this.props.createProduit(this.state.nom,this.state.localisation,this.state.description,this.state.prix,this.state.image, this.state.filename)
+       this.props.createProduit(this.state.nom,this.state.localisation,this.state.description,this.state.prix,this.state.image, this.state.filename, this.state.selectedTags)
        this.setState({
            nom : '',
            localisation: '',
@@ -69,12 +95,20 @@ export default class TestForm extends Component {
        })
    }
     render() {
+        const { tags } = this.state;
         return (
             <div className="container">
                 <h1 className="text-center">Formulaire d'Ajout</h1>
                 <form onSubmit={this.submit} className="form-group">
                     <label htmlFor="nom">Nom:</label>
                     <input type="text" name="nom" className="form-control" value={this.state.nom} onChange={this.changenom}/>
+
+                    <label htmlFor="sel1">Select tags:</label>
+                    <select className="form-control" multiple={true} onChange={this.onTagSelected}>
+                        {tags.map(tag => (
+                            <option value={tag.id}>{tag.nom}</option>
+                        ))}
+                    </select>
 
                     <label htmlFor="localisation">localisation:</label>
                     <input type="text" name="localisation" className="form-control" value={this.state.localisation} onChange={this.changelocal}/>
@@ -92,6 +126,6 @@ export default class TestForm extends Component {
                 </form>
             </div>
         )
-       
+
     }
 }
